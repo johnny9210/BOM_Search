@@ -14,6 +14,16 @@ from file.search import create_opensearch_client, save_chunks_to_opensearch
 from check.check_data import tech_sections, QA_sections
 from rag.rag import rag_query, generate_answer_with_llm, create_llm_client
 
+
+
+ip_address = st.context.ip_address
+
+if ip_address:
+    st.write(f"Client IP Address: {ip_address}")
+else:
+    st.write("No IP address found. This is expected during local development.")
+
+    
 def document_processing_page():
     """문서 디지털화 시스템 페이지"""
     st.title("📄 문서 디지털화 시스템")
